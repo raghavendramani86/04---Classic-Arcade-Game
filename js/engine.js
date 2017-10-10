@@ -409,7 +409,7 @@
       enemy.x = enemy.x>game.canvas[0].width?enemy.cleanUp():enemy.x;
       enemy.x = enemy.x<-75?enemy.cleanUp():enemy.x;
       // enemies with hero
-      if ((enemy.x>=hero.x-20&&enemy.x<hero.x+40)&&(enemy.y>=hero.y-40&&enemy.y<hero.y+40)) {
+      if ((enemy.x>=hero.x-20&&enemy.x<hero.x+40)&&(enemy.y>=hero.y-50&&enemy.y<hero.y+50)) {
         hero.reset(190,500);
         game.tries++;
       }
