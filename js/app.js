@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // Define Art Asset source
   var source = [
     "img/images/water-block.png",

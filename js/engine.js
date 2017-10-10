@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 
 //Game engine
 
@@ -90,7 +91,7 @@
     render() {
       this.activeObjects.forEach(function(object) {
         object.render();
-      })
+      });
     }
     /*Generic method used to generate all entities involved in the
     game.
@@ -119,22 +120,22 @@
           to control unplayable number of enemies on
           screen
           */
-          var range = buildRandomSequence(250,500,500)[0]
+          var range = buildRandomSequence(250,500,500)[0];
           this.generate = setInterval(function() {
             if (val===1) {
-              new Enemy(engine.canvas[0].width,250,"img/images/enemy-bug-rev.png",10);
+              var enemy1 = new Enemy(engine.canvas[0].width,250,"img/images/enemy-bug-rev.png",10);
             }
             if (val===2) {
-              new Enemy(0,330,"img/images/enemy-bug.png",10);
+              var enemy2 = new Enemy(0,330,"img/images/enemy-bug.png",10);
             }
             if (val===3) {
-              new Enemy(engine.canvas[0].width,410,"img/images/enemy-bug-rev.png",10);
+              var enemy3 = new Enemy(engine.canvas[0].width,410,"img/images/enemy-bug-rev.png",10);
             }
             val = shuffleArray(buildRandomSequence(1,4,3))[0];
-          },range)
+          },range);
         }
         else { // generating single enemy
-          new Enemy(x,y,path,speed);
+          var enemy = new Enemy(x,y,path,speed);
         }
       }
     }
@@ -155,7 +156,7 @@
             enemy.move(45);
           }
           checkCollision();
-        })
+        });
       },30);
     }
     /* Method to start game execution*/
@@ -224,10 +225,10 @@
     */
     endMessage() {
       this.canvas[1].font = "20px Arial";
-      this.canvas[1].strokeText("You Won!!.",10,135)
-      this.canvas[1].fillText("You Won!!.",10,135)
+      this.canvas[1].strokeText("You Won!!.",10,135);
+      this.canvas[1].fillText("You Won!!.",10,135);
 
-      this.canvas[1].strokeText("End!!, Thank you for playing.",10,this.canvas[0].height-50)
+      this.canvas[1].strokeText("End!!, Thank you for playing.",10,this.canvas[0].height-50);
       this.canvas[1].fillText("End!!, Thank you for playing.",10,this.canvas[0].height-50);
     }
     /* This method controls the following end activities of the game:
@@ -273,7 +274,7 @@
       this.generate=null;
       this.move=null;
     }
-  };
+  }
 
 // Supporting functions to the game engine
   /* This function creates a canvas HTML
@@ -346,7 +347,7 @@
   function getImage(path) {
     // if image does not exist, load it and then return
     if (game.cache[path]===undefined) {
-      cacheImages(path)
+      cacheImages(path);
     }
     return game.cache[path];
   }
