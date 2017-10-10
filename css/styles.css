@@ -1,0 +1,14 @@
+body {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  transform: scale(0.9);
+}
+
+.canvas {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
